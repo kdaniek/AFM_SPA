@@ -11,7 +11,7 @@ export function Rooms() {
         <ul></ul>
     `;
 
-    // pobieramy pokoje z json-server
+    // pobieramy detale pojedynczego pokoju z json-server
     fetch('http://localhost:3000/rooms')  // fetch zwraca promise
         .then(response => response.json())
         .then(rooms => {

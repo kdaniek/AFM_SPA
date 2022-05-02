@@ -6,8 +6,6 @@ export function EmployeeDetails(id) {
         <p>Loading...</p>
     `;
 
-
-    // pobieramy detale pojedynczego pokoju z json-server
     fetch(`http://localhost:3000/employees/${id}`)  
         .then(response => response.json())
         .then(employee => {
@@ -18,11 +16,11 @@ export function EmployeeDetails(id) {
                 <br>
                 <br>
                 <h3>Nazywam się ${employee.name} i pracuję w naszym SPA już od ${employee.experience} lat.</h3>
-                <p>Nasi goście oceniają mnie na ${employee.rating.toFixed(2)} !</p>
+                <p>Nasi goście oceniają mnie na <strong>${employee.rating.toFixed(2)}</strong> !</p>
                 <p>Chcesz wiedzieć więcej? <a href = "mailto: ${employee.email}"><strong>NAPISZ DO MNIE</strong></a></p> 
             `;
 
-            section.querySelector('p').remove();  // pozbywamy się wpisu Loading
+            section.querySelector('p').remove();
             section.append(article); 
         });
 

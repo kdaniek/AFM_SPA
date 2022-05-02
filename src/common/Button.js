@@ -1,6 +1,4 @@
 export function Button(options) {
-    // ALBO skorzystaj z destrukturyzacji obiektu options
-    // const { text, callback } = options;
 
     const button = document.createElement('button');
     button.setAttribute('type', 'button');

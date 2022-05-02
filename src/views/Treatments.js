@@ -11,8 +11,7 @@ export function Treatments() {
         <ul></ul>
     `;
 
-    // pobieramy treatments z json-server
-    fetch('http://localhost:3000/treatments')  // fetch zwraca promise
+    fetch('http://localhost:3000/treatments')
         .then(response => response.json())
         .then(treatments => {
             const lis = treatments.map(treatment => { 
@@ -27,7 +26,7 @@ export function Treatments() {
                     text: 'SZCZEGÓŁY',
                     callback: () => {
                         const navigateEvent = new CustomEvent('navigate', {
-                            detail: () => TreatmentDetails(treatment.id) //jak nie ma {} po => to znaczy że coś zwracamy
+                            detail: () => TreatmentDetails(treatment.id)
 
                         });
                     
@@ -43,14 +42,13 @@ export function Treatments() {
                     }
                 });
 
-                // footer jest ostatnim dzieckiem elementu li
                 li.lastElementChild.append(seeMoreButton, addToCartButton);
 
                 return li;
             });
 
             section.querySelector('p').remove();
-            section.lastElementChild.append( ...lis ); // albo querySelector // >> ... << to operator rozproszenia żeby były wszystkie el. tej tablicy
+            section.lastElementChild.append( ...lis );
         });
 
     return section;

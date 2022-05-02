@@ -10,8 +10,7 @@ export function Employees() {
         <ul></ul>
     `;
 
-    // pobieramy treatments z json-server
-    fetch('http://localhost:3000/employees')  // fetch zwraca promise
+    fetch('http://localhost:3000/employees')
         .then(response => response.json())
         .then(employees => {
             const lis = employees.map(employee => {   
@@ -27,7 +26,7 @@ export function Employees() {
                     text: 'SZCZEGÓŁY',
                     callback: () => {
                         const navigateEvent = new CustomEvent('navigate', {
-                            detail: () => EmployeeDetails(employee.id) //jak nie ma {} po => to znaczy że coś zwracamy
+                            detail: () => EmployeeDetails(employee.id)
 
                         });
                     
@@ -35,14 +34,13 @@ export function Employees() {
                     }
                 });
 
-                // footer jest ostatnim dzieckiem elementu li
                 li.lastElementChild.append(seeMoreButton);
 
                 return li;
             });
 
             section.querySelector('p').remove();
-            section.lastElementChild.append( ...lis ); // albo querySelector // >> ... << to operator rozproszenia żeby były wszystkie el. tej tablicy
+            section.lastElementChild.append( ...lis );
         });
 
     return section;

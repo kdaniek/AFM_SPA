@@ -1,10 +1,10 @@
-import { Home } from '../views/Home'; // >> .. << bo wychodzimy z obecnego katalogu
+import { Home } from '../views/Home';
+import { Button } from '../common/Button';
 import { Rooms } from '../views/Rooms';
 import { Treatments } from '../views/Treatments';
 import { Employees } from '../views/Employees';
-import { Button } from '../common/Button';
-import { Cart } from '../views/Cart'
 import { Contact } from '../views/Contact';
+import { Cart } from '../views/Cart'
 
 const navigateTo = (component) => {
     const navigateEvent = new CustomEvent('navigate', {

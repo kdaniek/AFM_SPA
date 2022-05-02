@@ -57,9 +57,15 @@ export function Cart() {
     summary.innerHTML= `Łączna wartość Twoich produktów to ${total} złotych.
     `;
 
-    //section.querySelector('p').remove();
+    const payButton = Button({
+        text: 'ZAPŁAĆ TERAZ',
+        callback: () => {
+        }
+    });
+
     section.lastElementChild.append( ...rows );
     section.append(summary);
+    section.lastElementChild.append(payButton); // nie działający button
 
     return section;
 }

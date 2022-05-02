@@ -6,7 +6,6 @@ export function TreatmentDetails(id) {
         <p>Loading...</p>
     `;
 
-    // pobieramy detale pojedynczego pokoju z json-server
     fetch(`http://localhost:3000/treatments/${id}`)  
         .then(response => response.json())
         .then(treatment => {
@@ -18,7 +17,7 @@ export function TreatmentDetails(id) {
                 <p>Zabieg trwa <strong>${treatment.time}</strong> minut a jego koszt to <strong>${treatment.price.toFixed(2)}</strong> złotych.</p>
             `;
 
-            section.querySelector('p').remove();  // pozbywamy się wpisu Loading
+            section.querySelector('p').remove();
             section.append(article); 
         });
 
