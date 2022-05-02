@@ -38,7 +38,6 @@ export function Rooms() {
                     text: 'DO KOSZYKA',
                     callback: () => {
                         cartManager.addItem(room);
-                        alert("dodałeś pokój do koszyka!");
                     }
                 });
 

@@ -38,7 +38,6 @@ export function Treatments() {
                     text: 'DO KOSZYKA',
                     callback: () => {
                         cartManager.addItem(treatment);
-                        alert("dodałeś zabieg do koszyka!");
                     }
                 });
 

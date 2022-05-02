@@ -77,21 +77,21 @@ main {
     }
 
     button,
-        .btn {
-          background  : goldenrod;
-          font-size   : 1rem;
-          font-weight : bold;
-          box-shadow  : goldenrod 0 0.125rem 0.5rem 0.125rem;
-          color       : white;
-          padding     : 1rem;
+    .btn {
+      background  : goldenrod;
+      font-size   : 1rem;
+      font-weight : bold;
+      box-shadow  : goldenrod 0 0.125rem 0.5rem 0.125rem;
+      color       : white;
+      padding     : 1rem;
 
-          &:active,
-          &:focus,
-          &:hover {
-            background : white;
-            color      : goldenrod;
-          }
-        }
+      &:active,
+      &:focus,
+      &:hover {
+        background : white;
+        color      : goldenrod;
+      }
+      }
 
     ul {
         list-style : none;
