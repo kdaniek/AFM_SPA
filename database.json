@@ -1,0 +1,113 @@
+{
+  "users": [],
+  "rooms": [
+    {
+      "id": 1,
+      "name": "ALFA",
+      "beds": 2,
+      "rating": 5.0,
+      "price": 170
+    },
+    {
+      "id": 2,
+      "name": "BETA",
+      "beds": 2,
+      "rating": 4.5,
+      "price": 240
+    },
+    {
+      "id": 3,
+      "name": "GAMMA",
+      "beds": 3,
+      "rating": 4.7,
+      "price": 290
+    },
+    {
+      "id": 4,
+      "name": "DELTA",
+      "beds": 4,
+      "rating": 4.8,
+      "price": 340
+    }
+  ],
+  "treatments": [
+    {
+      "id": 5,
+      "name": "Masaż rozgrzanym monitorem",
+      "area": "plecy",
+      "time": 30,
+      "price": 80
+    },
+    {
+      "id": 6,
+      "name": "Biczowanie kablem od myszy",
+      "area": "plecy",
+      "time": 20,
+      "price": 70
+    },
+    {
+      "id": 7,
+      "name": "Peeling odłamkami płyty CD",
+      "area": "dłonie",
+      "time": 15,
+      "price": 50
+    },
+    {
+      "id": 8,
+      "name": "Pedicure woskiem z USB",
+      "area": "nogi",
+      "time": 25,
+      "price": 100
+    },
+    {
+      "id": 9,
+      "name": "Manicure analogowo-cyfrowy",
+      "area": "dłonie",
+      "time": 45,
+      "price": 150
+    },
+    {
+      "id": 10,
+      "name": "Kąpiel w gorącej kawie",
+      "area": "dłonie",
+      "time": 60,
+      "price": 200
+    },
+    {
+      "id": 11,
+      "name": "Depilacja dyskiem twardym",
+      "area": "ciało",
+      "time": 45,
+      "price": 120
+    }
+  ],
+  "employees": [
+    {
+      "id": 12,
+      "name": "Ala Makota",
+      "experience": 7,
+      "rating": 5.0,
+      "job" : "recepcjonistka",
+      "photo": "https://source.unsplash.com/rDEOVtE7vOs/400x225",
+      "email": "alamakota@contact.com"
+    },
+    {
+      "id": 13,
+      "name": "Sherlock Holmes ",
+      "experience": 3,
+      "rating": 4.5,
+      "job" : "masażysta",
+      "photo": "https://source.unsplash.com/4_QFycgpC4c/400x225",
+      "email": "sherlockholmes@contact.com"
+    },
+    {
+      "id": 14,
+      "name": "John Watson",
+      "experience": 5,
+      "rating": 4.7,
+      "job" : "masażysta",
+      "photo": "https://source.unsplash.com/RFFR1JjkJx8/400x225",
+      "email": "johnwatson@contact.com"
+    }
+  ]
+}
