@@ -17,7 +17,6 @@ export function Cart() {
             <div class="col col-1">NAZWA</div>
             <div class="col col-2">CENA</div>
             <div class="col col-4">USUŃ</div>
-
         </li></ul>
     `;
 
@@ -35,7 +34,7 @@ export function Cart() {
         li.innerHTML = `
                 <div class="col col-1" data-label="nazwa">${item.name}</div>
                 <div class="col col-2" data-label="cena">${item.price.toFixed(2)} PLN</div>
-                <div class="col col-3" data-label="USUŃ"></div>
+                <div class="col col-3" data-label="usuń"></div>
         `;
 
         const removeFromCartButton = Button({
