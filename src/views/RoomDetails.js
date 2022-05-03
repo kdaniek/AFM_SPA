@@ -1,3 +1,6 @@
+import { Button } from "../common/Button";
+import { Rooms } from "./Rooms";
+
 export function RoomDetails(id) {
     const section = document.createElement('section');
 
@@ -18,8 +21,19 @@ export function RoomDetails(id) {
                 <p>Ocena naszych gości: <strong>${room.rating.toFixed(2)}</strong></p>
             `;
 
+            const backButton = Button({
+                text: 'POWRÓT DO LISTY',
+                callback: () => {
+                    const navigateEvent = new CustomEvent('navigate', {
+                        detail: () => Rooms()
+                    });
+                    
+                    document.body.dispatchEvent(navigateEvent);
+                }
+            });
+
             section.querySelector('p').remove();  // pozbywamy się wpisu Loading
-            section.append(article); 
+            section.append(article,backButton); 
         });
 
     return section;

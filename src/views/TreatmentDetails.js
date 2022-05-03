@@ -1,3 +1,6 @@
+import { Button } from "../common/Button";
+import { Treatments } from "./Treatments";
+
 export function TreatmentDetails(id) {
     const section = document.createElement('section');
 
@@ -17,8 +20,19 @@ export function TreatmentDetails(id) {
                 <p>Zabieg trwa <strong>${treatment.time}</strong> minut a jego koszt to <strong>${treatment.price.toFixed(2)}</strong> złotych.</p>
             `;
 
+            const backButton = Button({
+                text: 'POWRÓT DO LISTY',
+                callback: () => {
+                    const navigateEvent = new CustomEvent('navigate', {
+                        detail: () => Treatments()
+                    });
+                    
+                    document.body.dispatchEvent(navigateEvent);
+                }
+            });
+
             section.querySelector('p').remove();
-            section.append(article); 
+            section.append(article,backButton); 
         });
 
     return section;

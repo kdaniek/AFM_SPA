@@ -1,3 +1,6 @@
+import { Button } from "../common/Button";
+import { Employees } from "./Employees";
+
 export function EmployeeDetails(id) {
     const section = document.createElement('section');
 
@@ -20,8 +23,19 @@ export function EmployeeDetails(id) {
                 <p>Chcesz wiedzieć więcej? <a href = "mailto: ${employee.email}"><strong>NAPISZ DO MNIE</strong></a></p> 
             `;
 
+            const backButton = Button({
+                text: 'POWRÓT DO LISTY',
+                callback: () => {
+                    const navigateEvent = new CustomEvent('navigate', {
+                        detail: () => Employees()
+                    });
+                    
+                    document.body.dispatchEvent(navigateEvent);
+                }
+            });
+
             section.querySelector('p').remove();
-            section.append(article); 
+            section.append(article,backButton); 
         });
 
     return section;
