@@ -1,4 +1,5 @@
 import { Button } from "../common/Button";
+import { Search } from "../common/Search";
 import { TreatmentDetails } from "./TreatmentDetails";
 import { cartManager } from "../cart/cart-manager";
 
@@ -8,7 +9,8 @@ export function Treatments() {
     section.innerHTML = `
         <h2>Dowiedz się więcej o naszych zabiegach</h2>
         <p>Loading...</p>
-        <ul></ul>
+        <input type="text" id="myInput" placeholder="szukaj zabiegu..">
+        <ul id="myUL"></ul>
     `;
 
     fetch('http://localhost:3000/treatments')
@@ -49,6 +51,8 @@ export function Treatments() {
             section.querySelector('p').remove();
             section.lastElementChild.append( ...lis );
         });
+
+    section.querySelector('#myInput').addEventListener('keyup',  Search);
 
     return section;
 }

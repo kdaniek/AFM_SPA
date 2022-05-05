@@ -3,7 +3,6 @@ import { Search } from "../common/Search";
 import { RoomDetails } from "./RoomDetails";
 import { cartManager } from "../cart/cart-manager";
 
-var parcelRequire;
 export function Rooms() {
 
     const section = document.createElement('section');

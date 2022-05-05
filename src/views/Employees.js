@@ -1,4 +1,5 @@
 import { Button } from "../common/Button";
+import { Search } from "../common/Search";
 import { EmployeeDetails } from "./EmployeeDetails";
 
 export function Employees() {
@@ -7,8 +8,10 @@ export function Employees() {
     section.innerHTML = `
         <h2>Poznaj naszych pracowników</h2>
         <p>Loading...</p>
-        <ul></ul>
+        <input type="text" id="myInput" placeholder="szukaj pracownika..">
+        <ul id="myUL"></ul>
     `;
+
 
     fetch('http://localhost:3000/employees')
         .then(response => response.json())
@@ -42,6 +45,8 @@ export function Employees() {
             section.querySelector('p').remove();
             section.lastElementChild.append( ...lis );
         });
+
+    section.querySelector('#myInput').addEventListener('keyup',  Search);
 
     return section;
 }
