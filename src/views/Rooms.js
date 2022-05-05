@@ -1,14 +1,18 @@
 import { Button } from "../common/Button";
+import { Search } from "../common/Search";
 import { RoomDetails } from "./RoomDetails";
 import { cartManager } from "../cart/cart-manager";
 
+var parcelRequire;
 export function Rooms() {
+
     const section = document.createElement('section');
 
     section.innerHTML = `
         <h2>Zobacz nasze pokoje</h2>
         <p>Loading...</p>
-        <ul></ul>
+        <input type="text" id="myInput" placeholder="szukaj pokoju..">
+        <ul id="myUL"></ul>
     `;
 
     // pobieramy detale pojedynczego pokoju z json-server
@@ -48,7 +52,10 @@ export function Rooms() {
 
             section.querySelector('p').remove();
             section.lastElementChild.append( ...lis ); // albo querySelector // >> ... << to operator rozproszenia żeby były wszystkie el. tej tablicy
+        
         });
+    
+    section.querySelector('#myInput').addEventListener('keyup',  Search);
 
     return section;
 }
