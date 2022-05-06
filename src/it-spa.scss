@@ -73,7 +73,7 @@ main {
     width         : 60%;
 
     p {
-        margin: 0.25rem 0;
+        margin : 0.25rem 0;
     }
 
     button,
@@ -114,13 +114,13 @@ main {
                 justify-content : flex-end;
 
                 &>*+* {
-                    margin-left: 1rem;
+                    margin-left : 1rem;
                 }
             }
         }
 
         li+li {
-            margin-top: 2rem;
+            margin-top : 2rem;
         }
     }   
 
@@ -136,7 +136,7 @@ main {
           background-color : goldenrod;
           font-size        : 0.9rem;
           text-transform   : uppercase;
-          letter-spacing   : 0.03em;
+          letter-spacing   : 0.03rem;
         }
         .table-row {
           background-color : #ffffff;
@@ -167,7 +167,7 @@ main {
             padding : 0.6rem 0;
             &:before {
               color         : goldenrod;
-              padding-right : 10px;
+              padding-right : 0.625rem;
               content       : attr(data-label);
               flex-basis    : 50%;
               text-align    : right;
@@ -189,7 +189,7 @@ main {
         justify-content : flex-end;
 
         &>*+* {
-            margin-left: 1rem;
+            margin-left : 1rem;
         }
     }
   }
@@ -243,7 +243,7 @@ input[type=date] {
 }
 
 //input[type=text]:focus {
-//  border: solid;
+//  border : solid;
 //}
 
 #passwordReqs {
@@ -254,8 +254,8 @@ input[type=date] {
   padding    : 1rem;
   margin-top : 0.625rem;
   p {
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
+    padding   : 0.5rem 2rem;
+    font-size : 1rem;
   }
 }
 
@@ -270,7 +270,7 @@ input[type=date] {
 }
 
 .invalid {
-  color: black;
+  color : black;
 }
 
 .invalid:before {

@@ -12,7 +12,6 @@ export function Employees() {
         <ul id="myUL"></ul>
     `;
 
-
     fetch('http://localhost:3000/employees')
         .then(response => response.json())
         .then(employees => {

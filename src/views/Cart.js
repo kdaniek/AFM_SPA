@@ -25,11 +25,18 @@ export function Cart() {
 
     const allItems = cartManager.getAllItems();
 
-    let total = 0;
+    var total = 0;
 
     allItems.map(item => {
         total = total + item.price;
-    })
+    });
+
+    // function recalculateTotal () {
+    //     for (var i = 0; i < allItems.length; i++) {
+    //         total = total + allItems[i].price;
+    //     }
+    //     return total;
+    // };
 
     const rows = allItems.map(item => {
         const li = document.createElement('li');
@@ -44,13 +51,12 @@ export function Cart() {
             text: 'USUŃ',
             callback: () => {
                 cartManager.removeItem(item);
-                total = total - item.price;
                 li.remove();
             }
         });
 
         li.lastElementChild.append(removeFromCartButton);
-
+       // li.querySelector('.btn').addEventListener('click', recalculateTotal);
         return li;
 
     });
