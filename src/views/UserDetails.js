@@ -2,7 +2,6 @@ export function UserDetails(id) {
     const section = document.createElement('section');
 
     section.innerHTML = `
-        <h2>szczegóły konta</h2>
         <p>Loading...</p>
     `;
 

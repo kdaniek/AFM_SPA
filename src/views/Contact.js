@@ -19,7 +19,7 @@ export function Contact(name) {
             <li><a href="https://instagram.com" target="_blank">instagramie</a></li>
         </section>
 
-        <h2>skontaktuj się z nami mailowo lub telefonicznie</h2>
+        <h2>skontaktuj się z nami mailowo lub telefonicznie:</h2>
         <address>
             <a href="mailto:naszmail@contact.us">naszmail@contact.us</a><br>
             <a href="tel:+48987654321">(+48) 987-654-321</a>

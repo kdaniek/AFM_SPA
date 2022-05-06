@@ -7,8 +7,11 @@ export function Cart() {
     section.innerHTML = `
         <br>
         <h2>określ daty swojego pobytu</h2>
-        <p> wybierz datę przyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" /></p>
-        <p> wybierz datę wyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" /></p>
+        <article>   
+            wybierz datę przyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" />
+            <br>
+            wybierz datę wyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" />
+        </article>
 
         <h2>oto Twoje produkty:</h2>
 
