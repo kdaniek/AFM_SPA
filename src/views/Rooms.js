@@ -10,7 +10,7 @@ export function Rooms() {
     section.innerHTML = `
         <h2>Zobacz nasze pokoje</h2>
         <p>Loading...</p>
-        <input type="text" id="myInput" placeholder="szukaj pokoju..">
+        <input type="text" id="searchInput" placeholder="szukaj pokoju..">
         <ul id="myUL"></ul>
     `;
 
@@ -54,7 +54,7 @@ export function Rooms() {
         
         });
     
-    section.querySelector('#myInput').addEventListener('keyup',  Search);
+    section.querySelector('#searchInput').addEventListener('keyup',  Search);
 
     return section;
 }

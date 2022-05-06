@@ -4,6 +4,7 @@ import { Rooms } from '../views/Rooms';
 import { Treatments } from '../views/Treatments';
 import { Employees } from '../views/Employees';
 import { Contact } from '../views/Contact';
+import { Login } from '../views/Login';
 import { Cart } from '../views/Cart'
 
 const navigateTo = (component) => {
@@ -20,6 +21,7 @@ const navItems = [
     { text: 'ZABIEGI', component: Treatments },
     { text: 'PRACOWNICY', component: Employees },
     { text: 'KONTAKT', component: Contact },
+    { text: 'KONTO', component: Login },
     { text: 'KOSZYK', component: Cart }
 ];
 

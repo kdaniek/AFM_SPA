@@ -1,5 +1,4 @@
 {
-  "users": [],
   "rooms": [
     {
       "id": 1,
@@ -108,6 +107,15 @@
       "job" : "masażysta",
       "photo": "https://source.unsplash.com/RFFR1JjkJx8/400x225",
       "email": "johnwatson@contact.com"
+    }
+  ],
+  "users": [
+    {
+      "id": 15,
+      "login": "login1@login1.com",
+      "password": "hashedpassword",
+      "firstname": "Kasia",
+      "enroldate": "01/03/2022"
     }
   ]
 }

@@ -1,6 +1,6 @@
 export function Search() {
     var filter, li, a, i, txtValue;
-    filter = document.getElementById('myInput').value.toUpperCase();
+    filter = document.getElementById('searchInput').value.toUpperCase();
     li = document.getElementById("myUL").getElementsByTagName('li')[0].innerHTML;
     
     // Loop through all list items, and hide those who don't match the search query

@@ -81,7 +81,6 @@ main {
       background  : goldenrod;
       font-size   : 1rem;
       font-weight : bold;
-      box-shadow  : goldenrod 0 0.125rem 0.5rem 0.125rem;
       color       : white;
       padding     : 1rem;
 
@@ -90,6 +89,7 @@ main {
       &:hover {
         background : white;
         color      : goldenrod;
+        box-shadow : goldenrod 0 0.125rem 0.5rem 0.125rem;
       }
       }
 
@@ -104,7 +104,7 @@ main {
             padding          : 3rem;
            // display          : block;
             font-weight      : bold;
-            box-shadow       : 0rem 0rem 0.5rem 0rem rgba(0,0,0,0.1);
+            box-shadow       : lightgray 0 0.125rem 0.5rem 0.125rem;
             justify-content  : space-between;
             margin-bottom    : 1.5rem;
 
@@ -140,7 +140,7 @@ main {
         }
         .table-row {
           background-color : #ffffff;
-          box-shadow       : 0rem 0rem 0.5rem 0rem rgba(0,0,0,0.1);
+          box-shadow       : lightgray 0 0.125rem 0.5rem 0.125rem;
         }
         .col-1 {
           flex-basis : 50%;
@@ -174,16 +174,24 @@ main {
             }
           }
         }
-
-  
     }
 
   article {
-    background : white;
-    box-shadow : goldenrod 0 2px 8px 2px;
-    margin     : 2em 1em;
-    padding    : 1rem;
-    text-align : justify;
+      background : white;
+      box-shadow : lightgray 0 0.125rem 0.5rem 0.125rem;
+      margin     : 2em 1em;
+      padding    : 1rem;
+      text-align : justify;
+
+      footer {
+        display         : flex;
+        align-items     : center;
+        justify-content : flex-end;
+
+        &>*+* {
+            margin-left: 1rem;
+        }
+    }
   }
 
   a {

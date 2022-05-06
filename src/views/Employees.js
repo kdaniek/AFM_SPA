@@ -8,7 +8,7 @@ export function Employees() {
     section.innerHTML = `
         <h2>Poznaj naszych pracowników</h2>
         <p>Loading...</p>
-        <input type="text" id="myInput" placeholder="szukaj pracownika..">
+        <input type="text" id="searchInput" placeholder="szukaj pracownika..">
         <ul id="myUL"></ul>
     `;
 
@@ -46,7 +46,7 @@ export function Employees() {
             section.lastElementChild.append( ...lis );
         });
 
-    section.querySelector('#myInput').addEventListener('keyup',  Search);
+    section.querySelector('#searchInput').addEventListener('keyup',  Search);
 
     return section;
 }
