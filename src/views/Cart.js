@@ -1,18 +1,42 @@
 import { Button } from "../common/Button";
 import { cartManager } from "../cart/cart-manager"; 
 
+var tomorrow = new Date();
+var dd = tomorrow.getDate()+1;
+var mm = tomorrow.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var yyyy = tomorrow.getFullYear();
+
+if(dd<10){
+    dd='0'+dd
+} 
+if(mm<10){
+    mm='0'+mm
+} 
+
+tomorrow = yyyy+'-'+mm+'-'+dd;
+
+function setMin() {
+    var checkinDate = new Date(document.getElementById("checkIn").value);
+    var checkoutDate = new Date(checkinDate);
+    checkoutDate.setDate(checkinDate.getDate() + 1);
+    var checkoutDateFormat = checkoutDate.toISOString().split('T')[0];
+    document.getElementById("checkOut").value = "";
+    document.getElementById("checkOut").setAttribute("min", checkoutDateFormat);
+};
+
+function setMax() {
+    var checkinDate = new Date(document.getElementById("checkIn").value);
+    var checkoutDate = new Date(checkinDate);
+    checkoutDate.setDate(checkinDate.getDate() + 365);
+    var checkoutDateFormat = checkoutDate.toISOString().split('T')[0];
+    document.getElementById("checkOut").value = "";
+    document.getElementById("checkOut").setAttribute("max", checkoutDateFormat);
+};
+
 export function Cart() {
 
     const section = document.createElement('section');
     section.innerHTML = `
-        <br>
-        <h2>określ daty swojego pobytu</h2>
-        <article>   
-            wybierz datę przyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" />
-            <br>
-            wybierz datę wyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" />
-        </article>
-
         <h2>oto Twoje produkty:</h2>
 
         <ul id="responsive-table">
@@ -61,6 +85,25 @@ export function Cart() {
 
     });
 
+    // wybierz datę przyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" />
+
+    const guestDates = document.createElement('section');
+    guestDates.innerHTML = `
+        <br>
+        <h2>określ daty swojego pobytu</h2>
+        <article>   
+            wybierz datę przyjazdu <input type="date" id="checkIn" />
+            <br>
+            wybierz datę wyjazdu <input type="date" id="checkOut" />
+        </article>
+    `;
+
+   //guestDates.querySelector("#checkIn").setAttribute("min", new Date().toISOString().split('T')[0]); 
+    guestDates.querySelector("#checkIn").setAttribute("min", tomorrow); 
+    guestDates.querySelector("#checkIn").addEventListener('change', setMin);
+    guestDates.querySelector("#checkIn").addEventListener('change', setMax);
+
+    
     const summary=document.createElement('h2');
     summary.innerHTML= `Łączna wartość Twoich produktów to ${total} złotych.
     `;
@@ -72,6 +115,7 @@ export function Cart() {
     });
 
     section.lastElementChild.append( ...rows );
+    section.append(guestDates);
     section.append(summary);
     section.lastElementChild.append(payButton); // nie działający button
 
