@@ -4,5 +4,4 @@ AFM SPA
 
 ## Authors
 
-[Katarzyna Zlezarczyk]()
-ex. [@DomPizzie](https://www.linkedin.com/in/katarzyna-zlezarczyk/)
+[@Katarzyna Zlezarczyk](https://www.linkedin.com/in/katarzyna-zlezarczyk/)
