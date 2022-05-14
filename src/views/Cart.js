@@ -49,16 +49,16 @@ export function Cart() {
 
     const allItems = cartManager.getAllItems();
 
-    var total = 0;
+    // var total = 0;
 
-    allItems.map(item => {
-        total = total + item.price;
-    });
-
+    // allItems.map(item => {
+    //     total = total + item.price;
+    // });
+    
     // function recalculateTotal () {
-    //     for (var i = 0; i < allItems.length; i++) {
-    //         total = total + allItems[i].price;
-    //     }
+    //         for (var i = 0; i < allItems.length; i++) {
+    //             total = total - allItems[i].price;
+    //         }
     //     return total;
     // };
 
@@ -76,13 +76,17 @@ export function Cart() {
             callback: () => {
                 cartManager.removeItem(item);
                 li.remove();
+                total = total - item.price;
+                console.log(total);
+                howmany = howmany - 1;
+                console.log(howmany);
+                recalculateTotal();
             }
         });
 
         li.lastElementChild.append(removeFromCartButton);
        // li.querySelector('.btn').addEventListener('click', recalculateTotal);
         return li;
-
     });
 
     // wybierz datę przyjazdu <input type="date" onfocus="this.min=new Date().toISOString().split('T')[0]" />
@@ -103,20 +107,29 @@ export function Cart() {
     guestDates.querySelector("#checkIn").addEventListener('change', setMin);
     guestDates.querySelector("#checkIn").addEventListener('change', setMax);
 
+    var total = 0;
+    var howmany = 0;
+
+    allItems.map(item => {
+        total = total + item.price;
+    });
+
+    howmany = allItems.length;
     
     const summary=document.createElement('h2');
-    summary.innerHTML= `Łączna wartość Twoich produktów to ${total} złotych.
+    summary.innerHTML= `Liczba produktów w koszyku: <strong>${howmany}</strong>. <br>
+    Łączna wartość produktów: <strong>${total}</strong> złotych.
     `;
 
     const payButton = Button({
-        text: 'ZAPŁAĆ TERAZ',
+        text: 'ZAREZERWUJ I ZAPŁAĆ',
         callback: () => {
         }
     });
 
     section.lastElementChild.append( ...rows );
-    section.append(guestDates);
     section.append(summary);
+    section.append(guestDates);
     section.lastElementChild.append(payButton); // nie działający button
 
     return section;

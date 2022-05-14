@@ -65,6 +65,23 @@ nav {
             color      : goldenrod;
         }
     }
+
+    //@media all and (max-width: 767px)
+    
+    @media all and (max-width: 1200px){
+      button,
+      .btn{
+        font-size: 1rem;
+        max-width: 50%;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background : white;
+            color      : goldenrod;
+        }
+      }
+    }
 }
 
 main {
@@ -277,4 +294,21 @@ input[type=date] {
   position : relative;
   left     : -1rem;
   content  : "✖";
+}
+
+
+@media all and (max-width: 767px){
+  .client{
+    max-width: 50%;
+  }
+}
+
+@media all and (max-width: 1200px){
+  .blockquote p{
+    font-size: 0.8rem;
+  }
+
+  .client{
+    width: 60%;
+  }
 }
