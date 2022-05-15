@@ -80,12 +80,18 @@ export function Cart() {
                 console.log(total);
                 howmany = howmany - 1;
                 console.log(howmany);
-                recalculateTotal();
+                //recalculateTotal();
+
+                const navigateEvent = new CustomEvent('navigate', {
+                    detail: () => Cart()
+                });
+                
+                document.body.dispatchEvent(navigateEvent);
             }
         });
 
         li.lastElementChild.append(removeFromCartButton);
-       // li.querySelector('.btn').addEventListener('click', recalculateTotal);
+        //li.querySelector('.btn').addEventListener('click', recalculateTotal);
         return li;
     });
 
