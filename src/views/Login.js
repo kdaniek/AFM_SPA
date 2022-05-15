@@ -48,11 +48,11 @@ function validatePassword() {
     }
     // długość
     if(document.getElementById("passwordInputEnrol").value.length >= 8) {
-        length.classList.remove("invalid");
-        length.classList.add("valid");
+        passwordLength.classList.remove("invalid");
+        passwordLength.classList.add("valid");
     } else {
-        length.classList.remove("valid");
-        length.classList.add("invalid");
+        passwordLength.classList.remove("valid");
+        passwordLength.classList.add("invalid");
     }
 };
 
@@ -98,7 +98,7 @@ export function Login() {
     <p id="letter" class="invalid">małych liter</p>
     <p id="capital" class="invalid">dużych liter</p>
     <p id="number" class="invalid">cyfr</p>
-    <p id="length" class="invalid">minimum ośmiu znaków</p>
+    <p id="passwordLength" class="invalid">minimum ośmiu znaków</p>
     </div>
     <input type="checkbox" id="option1" name="vehicle1" value="Bike">
     <label for="option1"> Chcę być informowany o zniżkach i promocjach</label><br>
@@ -119,12 +119,6 @@ export function Login() {
     enrolSection.lastElementChild.append(enrolButton);
 
     section.append(loginSection, enrolSection);
-
-    var input = document.getElementById("passwordInputEnrol");
-    var letter = document.getElementById("letter");
-    var capital = document.getElementById("capital");
-    var number = document.getElementById("number");
-    var length = document.getElementById("length"); //length is not working properly
 
     section.querySelector('#showPassword').addEventListener('click', showPassword);
 
