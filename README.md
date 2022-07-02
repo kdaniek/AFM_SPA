@@ -2,7 +2,7 @@
 
 AFM IT SPA - Single Page Application
 
-# Project Description
+## Project Description
 
 This application allows users to:
 

@@ -25,7 +25,7 @@ html, body {
 }
 
 .burger{
-  @media(max-width: 500px){
+  @media (max-width: 500px) {
       position         : fixed;
       display          : inline-block;
       top              : 2rem;
@@ -35,7 +35,7 @@ html, body {
       background-color : transparent;
       z-index          : 2;
 
-      div.bar1, .bar2, .bar3{
+      div.bar1, .bar2, .bar3 {
           width            : 3rem;
           height           : 0.5rem;
           background-color : goldenrod;
@@ -347,7 +347,7 @@ input[type=date] {
 //}
 
 #passwordReqs {
-  display    :none;
+  display    : none;
   background :whitesmoke;
   color      :black;
   position   : relative;
@@ -380,18 +380,18 @@ input[type=date] {
 }
 
 
-@media all and (max-width: 767px){
-  .client{
+@media all and (max-width: 767px) {
+  .client {
     max-width: 50%;
   }
 }
 
-@media all and (max-width: 1200px){
-  .blockquote p{
+@media all and (max-width: 1200px) {
+  .blockquote p {
     font-size: 0.8rem;
   }
 
-  .client{
+  .client {
     width: 60%;
   }
 }
