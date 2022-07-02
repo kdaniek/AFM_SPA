@@ -13,7 +13,7 @@ html, body {
 }
 
 .wrapper.show { 
-  padding-left : 37vw;
+  padding-left : 33vw;
 } 
 
 .burger.active+nav {
@@ -83,11 +83,12 @@ nav {
 
   @media (max-width: 480px) {
       position     : fixed;
-      width        : 37vw;
-      left         : -37vw;
+      width        : 33vw;
+      left         : -33vw;
       top          : 0;
       bottom       : 0;
       padding-left : 0;
+      display      : list-item;
   }
 
   button,
@@ -109,10 +110,10 @@ nav {
           color      : goldenrod;
       }
 
-      /* Media Query for Mobile Devices */
       @media (max-width: 480px) {
         font-size : 1rem;
         padding   : 0.5rem;
+        margin-left: 00.5rem;
       }
       
       @media (min-width: 481px) {
@@ -120,7 +121,8 @@ nav {
         padding   : 0.5rem;
       }
 
-      /* Media Query for low resolution Tablets, Ipads(min-width: 481px) and (max-width: 767px) */
+      /* Media Query for Mobile Devices (max-width: 480px) */
+      /* Media Query for low resolution Tablets, Ipads (min-width: 481px) and (max-width: 767px) */
       /* Media Query for Tablets Ipads portrait mode (min-width: 768px) and (max-width: 1024px) */
       /* Media Query for Laptops and Desktops (min-width: 1025px) and (max-width: 1280px) */
       /* Media Query for Large screens (min-width: 1281px) */
@@ -152,7 +154,23 @@ nav {
 main {
     margin-top    : 3rem;
     margin-bottom : 3rem;
-    width         : 60%;
+    width         : 65%;
+
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      width : 70%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      width : 80%;
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      width : 90%;
+    }
+
+    @media (max-width: 480px) {
+      width : 100%;
+    }
 
     p {
         margin : 0.25rem 0;
@@ -192,7 +210,6 @@ main {
 
             footer {
                 display         : flex;
-                align-items     : center;
                 justify-content : flex-end;
                 flex-wrap       : wrap;
 
@@ -267,12 +284,8 @@ main {
       text-align : justify;
 
       footer {
-        //display         : flex;
-        //align-items     : center;
-        //justify-content : flex-end;
-
         display         : flex; 
-        justify-content : space-evenly;
+        justify-content : flex-end;
         flex-wrap       : wrap;
 
         &>*+* {
