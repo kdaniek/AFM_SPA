@@ -38,6 +38,19 @@ export function Nav() {
         });
     });
 
+    const burger = document.querySelector(".burger");
+    const iconBurger = document.querySelector(".bar");
+    const iconX = document.querySelector(".close");
+    const wrapper = document.querySelector(".wrapper");
+
+
+    burger.addEventListener("click", function () {
+        iconBurger.classList.toggle("show");
+        iconX.classList.toggle("show");
+        burger.classList.toggle("active");
+        wrapper.classList.toggle("show");
+    });
+
     nav.append( ...buttons );
 
     return nav;

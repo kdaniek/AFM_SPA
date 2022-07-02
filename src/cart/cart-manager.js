@@ -10,9 +10,13 @@ export const cartManager = {
             const serializedItem = JSON.stringify( [item] );
             localStorage.setItem(key, serializedItem);
         } else {
+            // zamieniamy ciag znakow na tablice
             const parsedCart = JSON.parse(cart);
-            parsedCart.push(item); 
+            // dodajemy nowy produkt do tablicy
+            parsedCart.push(item);
+            // zamieniamy tablice na ciag znakow
             const serializedCart = JSON.stringify(parsedCart);
+            // zapisujemy go do local storage
             localStorage.setItem(key, serializedCart);
         }
     },
@@ -40,6 +44,7 @@ export const cartManager = {
         } else {
             const parsedCart = JSON.parse(cart);
             return parsedCart;
+            // ALBO krocej return JSON.parse(cart);
         }
     }
 
