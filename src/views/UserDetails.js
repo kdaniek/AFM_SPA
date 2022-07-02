@@ -1,3 +1,6 @@
+import { Button } from "../common/Button";
+import { Login } from "./Login";
+
 export function UserDetails(id) {
     const section = document.createElement('section');
 
@@ -15,8 +18,19 @@ export function UserDetails(id) {
                 <p>Dziękujemy że jesteś z nami od ${user.enroldate}!</p>
             `;
 
+            const logoutButton = Button({
+                text: 'WYLOGUJ SIĘ',
+                callback: () => {
+                    const navigateEvent = new CustomEvent('navigate', {
+                        detail: () => Login()
+                    });
+                    
+                    document.body.dispatchEvent(navigateEvent);
+                }
+            });
+
             section.querySelector('p').remove();
-            section.append(article); 
+            section.append(article,logoutButton); 
         });
 
     return section;
